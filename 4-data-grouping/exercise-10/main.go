@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+/*
+Using the previous exercise, remove an entry from the map and demonstrate the entire map using range.
+*/
+
+func main() {
+	m := map[string][]string{
+		"LeBron_James": {
+			"Play Basketball",
+			"Beat records",
+		},
+		"Jordan_Michael": {
+			"Play Basketball",
+			"Be the G.O.A.T",
+			"Make amazing shoes",
+		},
+		"Rose_Derrick": {
+			"Play Basketball",
+			"Make standing dunks",
+			"Have an explosive game style",
+		},
+	}
+
+	delete(m, "LeBron_James")
+
+	for key, value := range m {
+		fmt.Println(key)
+		for _, v := range value {
+			fmt.Printf("\t%v\n", v)
+		}
+	}
+}
